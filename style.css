@@ -1,0 +1,94 @@
+:root{
+    --primary: red;
+    --secondary: blue;
+}
+
+
+body {
+    background-image: url(pictures/t2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+     
+}
+
+
+h1{
+    display: flex;
+    justify-content: center;
+    color: #f0f0f0;
+    margin-bottom:-5vh ;
+}
+
+/* 1. STYLIZACJA RODZICA (Plansza gry) */
+#main {
+    position: static;
+    display: grid; /* Włączamy siatkę Grid */
+    
+    /* Tworzymy 3 kolumny o identycznej, elastycznej szerokości (1 frakcja) */
+    grid-template-columns: repeat(3, 1fr); 
+    
+    /* Tworzymy 3 rzędy o identycznej wielkości */
+    grid-template-rows: repeat(3, 1fr);
+    
+    /* Grubość linii rozdzielających pola gry */
+    gap: 12px; 
+    
+    /* Rozmiar planszy (w tym przypadku 300px na 300px) */
+    width: 300px;
+    aspect-ratio: 1 / 1; /* Wymuszamy, aby wysokość zawsze była równa szerokości */
+    
+    /* Opcjonalnie: Tło planszy, które będzie widać w szczelinach (jako linie siatki) */
+    background-color: transparent; 
+    padding: 0px;
+    border-radius: 8px;
+    
+    /* Wyśrodkowanie planszy na środku strony */
+    margin: 40px auto; 
+    border: none;
+    padding: 200px;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    
+    
+    
+    
+}
+
+#resetBtn{
+    background-color: #a3bba123;
+    width: 15vh;
+    height: 5vh;
+}
+
+/* 2. STYLIZACJA DZIECI (Przyciski / Pola gry) */
+.cell {
+    background-color: var(--secondary);
+    border: none; /* Usuwamy domyślne ramki systemowe przycisków */
+    font-size: 3rem; /* Rozmiar znaków X oraz O */
+    font-weight: bold;
+    color: #222;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    
+    /* Centrowanie znaku X / O wewnątrz przycisku */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    text-decoration: #1505f3;
+}
+
+/* Efekt najechania myszką na wolne pole */
+.cell:hover {
+    background-color: #f0f0f0;
+}
+
+/* Efekt kliknięcia w pole */
+.cell:active {
+    background-color: #22e707;
+}
